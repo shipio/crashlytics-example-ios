@@ -13,6 +13,8 @@
 		2C4C16A71A9E8B9C008FE380 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4C16A61A9E8B9C008FE380 /* Images.xcassets */; };
 		2C4C16AA1A9E8B9C008FE380 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4C16A81A9E8B9C008FE380 /* LaunchScreen.xib */; };
 		2C4C16B61A9E8B9C008FE380 /* CrashlyticsExampleIosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C16B51A9E8B9C008FE380 /* CrashlyticsExampleIosTests.swift */; };
+		2CD9F1AF1A9E8EF0001CEFCC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD9F1AD1A9E8EF0001CEFCC /* Crashlytics.framework */; };
+		2CD9F1B01A9E8EF0001CEFCC /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD9F1AE1A9E8EF0001CEFCC /* Fabric.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		2C4C16AF1A9E8B9C008FE380 /* CrashlyticsExampleIosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrashlyticsExampleIosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C4C16B41A9E8B9C008FE380 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C4C16B51A9E8B9C008FE380 /* CrashlyticsExampleIosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsExampleIosTests.swift; sourceTree = "<group>"; };
+		2CD9F1AD1A9E8EF0001CEFCC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		2CD9F1AE1A9E8EF0001CEFCC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CD9F1AF1A9E8EF0001CEFCC /* Crashlytics.framework in Frameworks */,
+				2CD9F1B01A9E8EF0001CEFCC /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +68,8 @@
 				2C4C169C1A9E8B9C008FE380 /* CrashlyticsExampleIos */,
 				2C4C16B21A9E8B9C008FE380 /* CrashlyticsExampleIosTests */,
 				2C4C169B1A9E8B9C008FE380 /* Products */,
+				2CD9F1AD1A9E8EF0001CEFCC /* Crashlytics.framework */,
+				2CD9F1AE1A9E8EF0001CEFCC /* Fabric.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +130,7 @@
 				2C4C16961A9E8B9C008FE380 /* Sources */,
 				2C4C16971A9E8B9C008FE380 /* Frameworks */,
 				2C4C16981A9E8B9C008FE380 /* Resources */,
+				2CD9F1AC1A9E8E80001CEFCC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -206,6 +215,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CD9F1AC1A9E8E80001CEFCC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run f669639faf7fbcfb4f11585192d57716c790676a 16f5d8ea60e97e537d96896c3d9228201a74f92566ce9ba8f4851fee0082150a";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2C4C16961A9E8B9C008FE380 /* Sources */ = {
@@ -338,6 +363,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CrashlyticsExampleIos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -348,6 +377,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CrashlyticsExampleIos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -407,6 +440,7 @@
 				2C4C16BB1A9E8B9C008FE380 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C4C16BC1A9E8B9C008FE380 /* Build configuration list for PBXNativeTarget "CrashlyticsExampleIosTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +449,7 @@
 				2C4C16BE1A9E8B9C008FE380 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
